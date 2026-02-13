@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    overflow: hidden; /* hide scroll bar */
+}
+
+/* Make container full viewport */
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100vh; /* full screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center content */
+    align-items: center;
+    padding: 10px;
+}
+
+/* STAR BACKGROUND */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    animation: moveStars 100s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+/* .container {
+    position: relative;
+    z-index: 2;
+    margin-top: 60px;
+} */
+
+/* Typing Text */
+.typing-text {
+    font-size: 2rem;
+    min-height: 60px;
+    margin-bottom: 20px;
+}
+
+/* GIF */
+.gif_container img {
+    width: 250px;
+    margin-top: 20px;
+    animation: popUp 0.6s ease-out forwards;
+}
+
+@keyframes popUp {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* HEART WITH IMAGE PERFECT FIT */
+.heart {
+    width: 300px;
+    height: 270px;
+    margin: 40px auto;
+    position: relative;
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Clip image into heart shape */
+.heart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    clip-path: path("M150 270 L30 150 A75 75 0 1 1 150 90 A75 75 0 1 1 270 150 Z");
+    filter: drop-shadow(0 0 20px pink);
+}
+
+
+
+/* Create heart shape */
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -125px;
+    left: 0;
+}
+
+.heart::after {
+    left: 125px;
+    top: 0;
+}
+
+/* HEARTBEAT */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* LOVE BUTTON */
+.love-btn {
+    margin-top: 0px; /* moved up a bit */
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #ff4d88;
+    color: white;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px #ff4d88; }
+    to { box-shadow: 0 0 25px #ff99cc; }
+}
+
+@media screen and (max-width: 400px) {
+    .typing-text {
+        font-size: 1.4rem;
+    }
+
+    .gif_container img {
+        width: 150px;
+    }
+
+    .heart {
+        width: 150px;
+        height: 140px;
+    }
+
+    .love-btn {
+        font-size: 0.9rem;
+        padding: 10px 25px;
+    }
+}
+
+
+
+

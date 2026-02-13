@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Heart For You ❤️</title>
+    <link rel="stylesheet" href="yes_style.css">
+</head>
+<body>
+
+    <!-- Star Background -->
+    <div class="stars"></div>
+
+    <div class="container">
+
+        <!-- Typing Text -->
+        <h1 class="typing-text">
+            <span id="typed"></span>
+        </h1>
+
+        <!-- GIF -->
+        <div class="gif_container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif" alt="Cute GIF">
+        </div>
+
+        <!-- HEART WITH YOUR IMAGE -->
+        <div class="heart">
+            <img src="lovieee.jpg" alt="Our Photo">
+        </div>
+
+        <!-- LOVE BUTTON -->
+        <button class="love-btn" onclick="showLove()">
+            I Love You Mutuuu 💖
+        </button>
+
+    </div>
+
+    <!-- Romantic Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="tum-hi-ho-from-aashiqui-2_H5RvkVz1.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        /* Typing Effect */
+        const text = "Under this starry night, my heart beats only for you my Pukuluuu ✨";
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typed").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 50);
+            }
+        }
+        typeEffect();
+
+        function showLove() {
+            alert("I'm sad that I won't be getting the V today(14th February ) but I fucking love you to infinity and beyond budiii✨❤️");
+        }
+
+        /* Some browsers block autoplay */
+        document.body.addEventListener("click", function() {
+            document.getElementById("bgMusic").play();
+        }, { once: true });
+    </script>
+
+</body>
+</html>
